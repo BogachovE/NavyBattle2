@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cell_4.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cell_4.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_help.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/btn_help.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btnabout.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/btnabout.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cell2.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cell2.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_notification_clear_all.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/ic_notification_clear_all.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cell_hit.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cell_hit.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btnnewgame.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/btnnewgame.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_add.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/ic_menu_add.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/background.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/background.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cell.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cell.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_newgame.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/btn_newgame.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cell3.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cell3.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_view.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/ic_menu_view.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_opengame.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/btn_opengame.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cell_miss.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cell_miss.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btnopen.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/btnopen.png"
+    }
+]

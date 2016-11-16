@@ -1,0 +1,175 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:contentDescription="@string/btnStartGame"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ShipPlacement" >
+
+    <ImageView
+        android:id="@+id/imageAircarrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:contentDescription="@string/aircarrier"
+        android:onClick="aircarrierPlacement"
+        android:src="@drawable/aircarrier" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+    </TableLayout>
+
+    <Gallery
+        android:id="@+id/gallery1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageAircarrier"
+        android:layout_below="@+id/imageAircarrier"
+        android:layout_marginTop="27dp" />
+
+    <ImageView
+        android:id="@+id/imageCruiser1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="340dp"
+        android:layout_below="@+id/imageAircarrier"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:contentDescription="@string/cruiser"
+        android:src="@drawable/cruiser" />
+
+    <ImageView
+        android:id="@+id/ImageCruiser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageCruiser1"
+        android:layout_marginLeft="29dp"
+        android:layout_toRightOf="@+id/imageCruiser1"
+        android:clickable="true"
+        android:contentDescription="@string/cruiser"
+        android:src="@drawable/cruiser" />
+
+    <ImageView
+        android:id="@+id/imageCorvette1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageCruiser1"
+        android:layout_marginLeft="340dp"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:contentDescription="@string/corvette"
+        android:src="@drawable/corvette" />
+
+    <ImageView
+        android:id="@+id/imagePatrol1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/imageCorvette1"
+        android:layout_marginLeft="334dp"
+        android:layout_marginTop="18dp"
+        android:clickable="true"
+        android:contentDescription="@string/patrol_boat"
+        android:src="@drawable/patrol_boat" />
+
+    <ImageView
+        android:id="@+id/imagePatrol4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imagePatrol3"
+	    android:layout_toRightOf="@+id/imagePatrol3"
+        android:layout_marginLeft="18dp"
+        android:clickable="true"
+        android:contentDescription="@string/patrol_boat"
+        android:src="@drawable/patrol_boat" />
+
+    <ImageView
+        android:id="@+id/imageCorvette2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageCorvette1"
+        android:layout_toRightOf="@+id/imageCorvette1"
+        android:layout_marginLeft="15dp"
+        android:contentDescription="@string/corvette"
+        android:src="@drawable/corvette" />
+
+    <ImageView
+        android:id="@+id/imageCorvette3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_alignTop="@+id/imageCorvette2"
+        android:layout_toRightOf="@+id/imageCorvette2"
+        android:layout_marginLeft="15dp"
+        android:clickable="true"
+        android:contentDescription="@string/CpuLvl"
+        android:src="@drawable/corvette" />
+
+    <ImageView
+        android:id="@+id/imagePatrol3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imagePatrol2"
+        android:layout_toRightOf="@+id/imagePatrol2"
+        android:layout_marginLeft="15dp"
+        android:clickable="true"
+        android:contentDescription="@string/patrol_boat"
+        android:src="@drawable/patrol_boat" />
+
+    <ImageView
+        android:id="@+id/imagePatrol2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imagePatrol1"
+        android:layout_toRightOf="@+id/imagePatrol1"
+        android:layout_marginLeft="15dp"
+        android:clickable="true"
+        android:contentDescription="@string/patrol_boat"
+        android:src="@drawable/patrol_boat" />
+
+    <ImageButton
+        android:id="@+id/imageButtonStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imagePatrol3"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="19dp"
+        android:adjustViewBounds="false"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/btnStartGame"
+        android:onClick="startGame"
+        android:src="@drawable/btn_newgame"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imageReverse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imagePatrol2"
+        android:layout_marginRight="41dp"
+        android:layout_toLeftOf="@+id/imageAircarrier"
+        android:contentDescription="@string/Reverse"
+        android:onClick="reverseShip"
+        android:src="@drawable/reverse"
+        android:visibility="invisible" />
+
+</RelativeLayout>

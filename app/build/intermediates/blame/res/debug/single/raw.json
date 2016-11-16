@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/shipbell.wav",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/shipbell.wav"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/miss.mp3",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/miss.mp3"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/sunk.wav",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/sunk.wav"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/computer_win.wav",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/computer_win.wav"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/hit.wav",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/hit.wav"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/user_win.wav",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/user_win.wav"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/raw/placement.wav",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/raw/placement.wav"
+    }
+]

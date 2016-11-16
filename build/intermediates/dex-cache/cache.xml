@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.facebook.conceal/conceal/1.1.3/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="30cbc9b94a9a9e3c5d4252fde59e8db066460917">
+        <dex dex="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/pre-dexed/debug/com.facebook.conceal-conceal-1.1.3_f8f4ff413d73319bea21bfa45e867fdd54db5343.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Bogachov/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/Bogachov/Downloads/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_378cffa4450d47de6dea6107d832145c0444acb5/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Bogachov/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/pre-dexed/debug/gson-2.4_bc1cc848fd41ca4e4f3fc1ea6d991c4b20476c3d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Bogachov/Downloads/NavyBattle/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f183d6866f0136742b05d2b8b45bf32efdf71e77">
+        <dex dex="/Users/Bogachov/Downloads/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_9c0a63fba0c69f0721a2f49db4a57d8b133e2c5d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/Bogachov/Downloads/NavyBattle/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6ecf2a07fbbdffe5920d3f8b7ab4028166b56b8a">
+        <dex dex="/Users/Bogachov/Downloads/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f50ca35e12d04fc75506924160b6d4e41e9b64ad/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.orhanobut/hawk/2.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6d68a8fd0dd5d9a2b4e415a8411bf8b6aa50542f">
+        <dex dex="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/pre-dexed/debug/com.orhanobut-hawk-2.0.1_312de3aa0a0b4f5c99a1e5efe74ed5d84d2438e3.jar" />
+    </item>
+
+</items>

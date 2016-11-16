@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/menu/two_players.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/menu/two_players.xml"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/menu/settings.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/menu/settings.xml"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/menu/in_game_menu.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/menu/in_game_menu.xml"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/menu/ship_placement.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/menu/ship_placement.xml"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/menu/preferences.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/menu/preferences.xml"
+    }
+]
