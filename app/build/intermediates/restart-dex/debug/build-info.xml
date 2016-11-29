@@ -5,33 +5,40 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="89983150838793"
+    timestamp="108046026300200"
     token="1248120109895756941"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="4368" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="260" />
     <task
         name="verifier"
-        duration="0" />
+        duration="15" />
 
     <artifact
-        location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/outputs/apk/app-debug.apk"
-        type="MAIN" />
+        location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="89983150838793"
+        timestamp="106807363714891"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="108046026300200"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

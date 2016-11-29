@@ -71,7 +71,10 @@ public class ComputerVeryHard extends Computer {
 			Log.i("FourCell: ", Integer.toString(fourCell));
 			if(hunt4!=null){
 				hunt23.addAll(0,hunt4);
-				hunt4.clear();
+				ArrayList<Integer> fromBD = new ArrayList<>();
+				fromBD = Hawk.get("fromBD");
+				sortAgain(fromBD,hunt23);
+
 			}
 			ans = get23Move();
 		}
@@ -206,6 +209,50 @@ public class ComputerVeryHard extends Computer {
 			}
 
 		}
+
+
+
+	}
+
+	private void sortAgain (ArrayList<Integer> fromBD, ArrayList<Integer> al)	{
+		ArrayList<Map<Integer,Integer>> act = new ArrayList<Map<Integer,Integer>>();
+
+
+
+		for(int i=0;i<al.size();i++){
+			Map m = new HashMap<Integer,Integer>();
+			m.put(al.get(i), fromBD.get(al.get(i)));
+			act.add(i, m);
+		}
+
+
+		Collections.sort(act, new Comparator<Map<Integer,Integer>>() {
+			@Override
+			public int compare(Map<Integer, Integer> o1, Map<Integer, Integer> o2) {
+				int res = 0;
+
+				for(int key:o1.keySet()){
+					for(int key2:o2.keySet()) {
+						res =  o1.get(key) - o2.get(key2);
+					}
+				}
+
+				return res;
+			}
+		});
+
+
+		al.clear();
+
+		for(int i=0;i<act.size();i++){
+			for ( Integer key : act.get(i).keySet() ) {
+				al.add(i,key);
+			}
+
+		}
+
+		String s;
+		s="dasd";
 
 
 

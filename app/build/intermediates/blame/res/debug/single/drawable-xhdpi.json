@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_1_3.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_1_3.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_0_3.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_0_3.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_1_3.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_1_3.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/reverse_old.png",

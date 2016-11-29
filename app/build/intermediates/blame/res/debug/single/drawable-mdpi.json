@@ -148,12 +148,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cruiser_sunk_1_2smoool.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/aircarrier_0_4smoool.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/aircarrier_0_4smoool.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/aircarrier_sunk_0_2smoool.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/aircarrier_sunk_0_2smoool.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/aircarrier_0_4smoool.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/aircarrier_0_4smoool.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_help.png",
@@ -208,12 +208,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/aircarrier_sunk_0_3smoool.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cruiser_sunk_1_3smoool.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cruiser_sunk_1_3smoool.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/aircarrier_1_3smoool.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/aircarrier_1_3smoool.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/cruiser_sunk_1_3smoool.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-mdpi/cruiser_sunk_1_3smoool.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-mdpi/aircarrier_0_3smoool.png",

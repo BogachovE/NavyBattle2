@@ -1,7 +1,4 @@
-#Tue Nov 29 19:12:42 EET 2016
-base.0=/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0fe1a86a9f8fac0115eedf8dbb776f7709603cd1
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a025963674df2494235b578b937f8d8312f16585/classes.dex
-base.1=/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_a025963674df2494235b578b937f8d8312f16585
-file.0=/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0fe1a86a9f8fac0115eedf8dbb776f7709603cd1/classes.dex
+#Wed Nov 30 00:49:17 EET 2016
+base.0=/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
