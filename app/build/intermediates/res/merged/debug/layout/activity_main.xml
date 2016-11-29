@@ -27,42 +27,69 @@
         android:onClick="prefs"
         android:src="@drawable/settings" />
 
-    <ImageButton
-        android:id="@+id/btnNewgame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:adjustViewBounds="false"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/MainMenuBtn"
-        android:onClick="NewGame"
-        android:src="@drawable/btn_newgame" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="READ"
-        android:id="@+id/btn"/>
+        android:id="@+id/btn"
+        android:visibility="invisible" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dell"
         android:id="@+id/btn_dell"
-        android:layout_marginLeft="50dp"/>
+        android:layout_marginLeft="50dp"
+        android:visibility="invisible" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADD"
         android:id="@+id/btn_add"
-        android:layout_marginLeft="150dp"/>
+        android:layout_marginLeft="150dp"
+        android:visibility="invisible" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DELL"
         android:id="@+id/btn_dellBD"
-        android:layout_marginLeft="250dp"/>
+        android:layout_marginLeft="250dp"
+        android:visibility="gone" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn"
+        android:layout_toRightOf="@+id/btn"
+        android:layout_toEndOf="@+id/btn"
+        android:layout_marginTop="35dp"
+        android:id="@+id/rating_btn"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/btnNewgame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/MainMenuBtn"
+        android:onClick="NewGame"
+        android:src="@drawable/btn_newgame"
+        android:layout_below="@+id/rating_btn"
+        android:layout_alignRight="@+id/set_btn"
+        android:layout_alignEnd="@+id/set_btn" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/statistics"
+        android:id="@+id/set_btn"
+        android:onClick="toStat"
+        android:layout_below="@+id/rating_btn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="42dp" />
 
 
 </RelativeLayout>

@@ -23,7 +23,7 @@ import android.util.Log;
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        Log.d(LOG_TAG, "--- onCreate database ---");
+        /*Log.d(LOG_TAG, "--- onCreate database ---");
         // создаем таблицу с полями
         db.execSQL("create table mytable ("
                 + "id integer primary key autoincrement,"
@@ -62,7 +62,13 @@ import android.util.Log;
             // вставляем запись и получаем ее ID
             long rowID = db.insert("mytable", null, cv);
             Log.d(LOG_TAG, "row inserted, ID = " + rowID);
-        }
+        }*/
+
+
+
+        db.execSQL("create table listUser ("
+                + "id integer primary key autoincrement,"
+                + "name String" + ");");
     }
 
 

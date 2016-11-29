@@ -73,7 +73,7 @@ public class GameBoard implements Serializable {
 			
 			aircarrier = new Ship (0,4);
 			for (int i=start;i<start+31;i+=10)	{										
-				boardShips[i] = aircarrier;				//ship index --> 4 (ship size) + 0 (vertical) + 0,1,2,3 (cell num)
+				boardShips[i] = aircarrier;				//ship index --> 4 (ship size) + 0 (vertical) + 0,1,2,3 (celll num)
 				aircarrier.setCoordinates(i);
 			}
 		}
@@ -88,7 +88,7 @@ public class GameBoard implements Serializable {
 			}	
 			aircarrier = new Ship (1,4);
 			for (int i=start; i<start+4;i++)	{
-				boardShips[i] = aircarrier;			//ship index --> 4 (ship size) + 1 (horizontal) + 0,1,2,3 (cell num)
+				boardShips[i] = aircarrier;			//ship index --> 4 (ship size) + 1 (horizontal) + 0,1,2,3 (celll num)
 				aircarrier.setCoordinates(i);
 			}
 		}	
@@ -104,7 +104,7 @@ public class GameBoard implements Serializable {
 				
 				cruiser[i] = new Ship(0,3);
 				for (int j=start;j<start+21;j+=10)	{
-					boardShips[j] = cruiser[i];		//ship index --> 3 (ship size) + 0 (vertical) + 0,1,2(cell num)
+					boardShips[j] = cruiser[i];		//ship index --> 3 (ship size) + 0 (vertical) + 0,1,2(celll num)
 					cruiser[i].setCoordinates(j);
 				}	
 			}
@@ -120,7 +120,7 @@ public class GameBoard implements Serializable {
 				
 				cruiser[i] = new Ship(1,3);
 				for (int j=start; j<start+3;j++)	{
-					boardShips[j] = cruiser[i];			//ship index --> 3 (ship size) + 1 (horizontal) + 0,1,2 (cell num)
+					boardShips[j] = cruiser[i];			//ship index --> 3 (ship size) + 1 (horizontal) + 0,1,2 (celll num)
 					cruiser[i].setCoordinates(j);
 				}
 			}
@@ -137,7 +137,7 @@ public class GameBoard implements Serializable {
 				
 				corvette[i] = new Ship(0,2);
 				for (int j=start;j<start+11;j+=10)	{
-					boardShips[j] = corvette[i];		//ship index --> 3 (ship size) + 0 (vertical) + 0,1,2(cell num)
+					boardShips[j] = corvette[i];		//ship index --> 3 (ship size) + 0 (vertical) + 0,1,2(celll num)
 					corvette[i].setCoordinates(j);
 				}	
 			}
@@ -153,7 +153,7 @@ public class GameBoard implements Serializable {
 				
 				corvette[i] = new Ship(1,2);
 				for (int j=start; j<start+2;j++)	{
-					boardShips[j] = corvette[i];			//ship index --> 3 (ship size) + 1 (horizontal) + 0,1,2 (cell num)
+					boardShips[j] = corvette[i];			//ship index --> 3 (ship size) + 1 (horizontal) + 0,1,2 (celll num)
 					corvette[i].setCoordinates(j);
 				}
 			}

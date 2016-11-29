@@ -162,14 +162,17 @@
 
     <ImageView
         android:id="@+id/imageReverse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_above="@+id/imagePatrol2"
         android:layout_marginRight="41dp"
         android:layout_toLeftOf="@+id/imageAircarrier"
         android:contentDescription="@string/Reverse"
         android:onClick="reverseShip"
         android:src="@drawable/reverse"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_height="50dp"
+        android:layout_width="40dp" />
+
+
+
 
 </RelativeLayout>

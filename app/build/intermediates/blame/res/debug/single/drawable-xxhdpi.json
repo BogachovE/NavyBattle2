@@ -1,11 +1,15 @@
 [
     {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_menu_view.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/ic_menu_view.png"
+    },
+    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/btn_help.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/btn_help.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_menu_view.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/ic_menu_view.png"
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/celll.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/celll.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_notification_clear_all.png",
@@ -24,24 +28,28 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/cell_miss.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/background.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/btnnewgame.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/btnnewgame.png"
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/background.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/background.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/cell3.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/cell3.png"
     },
     {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/btnnewgame.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/btnnewgame.png"
+    },
+    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_menu_add.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/ic_menu_add.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/statistics.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/statistics.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/btnopen.png",
@@ -62,9 +70,5 @@
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/cell2.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/cell2.png"
-    },
-    {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xxhdpi/cell.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xxhdpi/cell.png"
     }
 ]

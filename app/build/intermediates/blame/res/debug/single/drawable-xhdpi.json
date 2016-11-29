@@ -24,12 +24,16 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/corvette_split_1_2.png"
     },
     {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_0_2.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_0_2.png"
+    },
+    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_1_2.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_1_2.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_0_2.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_0_2.png"
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/corvetteb.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/corvetteb.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cell_hit.png",
@@ -64,20 +68,20 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cell_4.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cell_4.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/background.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/background.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/background_general.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/background_general.png"
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cell_4.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cell_4.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/corvette_split_1_1.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/corvette_split_1_1.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/background_general.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/background_general.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_0_4.png",
@@ -96,12 +100,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/ic_notification_clear_all.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_1_4.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_1_4.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cell_available.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cell_available.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_1_4.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_1_4.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_sunk_1_1.png",
@@ -120,12 +124,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_1_3.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_split_1_2.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_split_1_2.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/vibration.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/vibration.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_split_1_2.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_split_1_2.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher3.png",
@@ -148,12 +152,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/patrolboat_sunk_0_1.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/corvette_sunk_0_1.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/corvette_sunk_0_1.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/corvette_sunk_1_1.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/corvette_sunk_1_1.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/corvette_sunk_0_1.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/corvette_sunk_0_1.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_menu_view.png",
@@ -164,20 +168,20 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cell_not_available.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/btn_opengame.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/btn_opengame.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_split_1_3.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_split_1_3.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_split_0_3.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_split_0_3.png"
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/btn_opengame.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/btn_opengame.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher2.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/ic_launcher2.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_split_0_3.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_split_0_3.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/btn_save.png",
@@ -192,6 +196,10 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/settings.png"
     },
     {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/celll.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/celll.png"
+    },
+    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/btn_help.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/btn_help.png"
     },
@@ -200,12 +208,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_sunk_1_3.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_sunk_0_3.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_sunk_0_3.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_1_4.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_1_4.png"
+    },
+    {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiser_sunk_0_3.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_sunk_0_3.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/corvette.png",
@@ -244,6 +252,10 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/btn_cancel.png"
     },
     {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cruiserb.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiserb.png"
+    },
+    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_0_4.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_0_4.png"
     },
@@ -268,16 +280,12 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cruiser_split_0_2.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_1_2.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_1_2.png"
-    },
-    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_0_3.png",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_0_3.png"
     },
     {
-        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/cell.png",
-        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/cell.png"
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/aircarrier_sunk_1_2.png",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/drawable-xhdpi/aircarrier_sunk_1_2.png"
     },
     {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/drawable-xhdpi/btnabout.png",

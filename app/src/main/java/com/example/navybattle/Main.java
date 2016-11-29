@@ -15,21 +15,77 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
+import com.orhanobut.hawk.Hawk;
 
 public class Main extends Activity {
 
 	Button btn,btn_dell,btn_dellBD;
 	final String LOG_TAG = "myLogs";
 	DBHelper dbHelper;
-	Button btn_add;
+	Button btn_add,rating_btn;
+	ImageButton set_btn;
+	String cUser;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		Hawk.init(this).build();
+		cUser=Hawk.get("cUser");
 		dbHelper = new DBHelper(this);
+		set_btn = (ImageButton)findViewById(R.id.set_btn) ;
 
+
+
+
+		rating_btn =(Button)findViewById(R.id.rating_btn);
+		rating_btn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				// создаем объект для данных
+				ContentValues cv = new ContentValues();
+
+
+				// подключаемся к БД
+				SQLiteDatabase db = dbHelper.getWritableDatabase();
+				Log.d(LOG_TAG, "--- Rows in mytable: ---");
+				// делаем запрос всех данных из таблицы mytable, получаем Cursor
+				Cursor c = db.query(cUser+"Rating", null, null, null, null, null, null);
+
+				if (c.moveToFirst()) {
+
+					// определяем номера столбцов по имени в выборке
+					int idColIndex = c.getColumnIndex("id");
+					int winEasyColIndex = c.getColumnIndex("winEasy");
+					int winNormalColIndex = c.getColumnIndex("winNormal");
+					int winHardColIndex = c.getColumnIndex("winHard");
+					int winVeryHardColIndex = c.getColumnIndex("winVeryHard");
+					int looseEasyColIndex = c.getColumnIndex("looseEasy");
+					int looseNormalColIndex = c.getColumnIndex("looseNormal");
+					int looseHardColIndex = c.getColumnIndex("looseHard");
+					int looseVeryHardColIndex = c.getColumnIndex("looseVeryHard");
+
+					do {
+						Log.d("d"," winEasy="  +c.getInt(winEasyColIndex)
+						          +"winNormal="+c.getInt(winNormalColIndex)
+								  +"winHard="  +c.getInt(winHardColIndex)
+								+"winVeryHard="+c.getInt(winVeryHardColIndex)
+						        +"looseEasy="  +c.getInt(looseEasyColIndex)
+						       +"looseNormal=" +c.getInt(looseNormalColIndex)
+						         +"looseHard=" +c.getInt(looseHardColIndex)
+						     +"looseVeryHard=" +c.getInt(looseVeryHardColIndex));
+
+
+					} while (c.moveToNext());
+				} else
+					Log.d("er", "0 rows");
+				c.close();
+
+			}
+		});
 
 		btn_dellBD = (Button)findViewById(R.id.btn_dellBD);
 		btn_dellBD.setOnClickListener(new View.OnClickListener() {
@@ -55,11 +111,11 @@ public class Main extends Activity {
 				SQLiteDatabase db = dbHelper.getWritableDatabase();
 				Log.d(LOG_TAG, "--- Rows in mytable: ---");
 				// делаем запрос всех данных из таблицы mytable, получаем Cursor
-				Cursor c = db.query("mytable", null, null, null, null, null, null);
+				Cursor c = db.query(cUser+"table", null, null, null, null, null, null);
 
 				Log.d(LOG_TAG, "--- Clear mytable: ---");
 				// удаляем все записи
-				int clearCount = db.delete("mytable", null, null);
+				int clearCount = db.delete(cUser+"table", null, null);
 				Log.d(LOG_TAG, "deleted rows count = " + clearCount);
 			}
 		});
@@ -77,7 +133,7 @@ public class Main extends Activity {
 				SQLiteDatabase db = dbHelper.getWritableDatabase();
 				Log.d(LOG_TAG, "--- Rows in mytable: ---");
 				// делаем запрос всех данных из таблицы mytable, получаем Cursor
-				Cursor c = db.query("mytable", null, null, null, null, null, null);
+				Cursor c = db.query(cUser+"table", null, null, null, null, null, null);
 
 				Log.d(LOG_TAG, "--- Insert in mytable: ---");
 				// подготовим данные для вставки в виде пар: наименование столбца - значение
@@ -93,7 +149,7 @@ public class Main extends Activity {
 				cv.put("c9", "sdasd");
 				cv.put("c10", "sdasd");
 				// вставляем запись и получаем ее ID
-				long rowID = db.insert("mytable", null, cv);
+				long rowID = db.insert(cUser+"table", null, cv);
 				Log.d(LOG_TAG, "row inserted, ID = " + rowID);
 			}
 		});
@@ -112,7 +168,7 @@ public class Main extends Activity {
 				SQLiteDatabase db = dbHelper.getWritableDatabase();
 				Log.d(LOG_TAG, "--- Rows in mytable: ---");
 				// делаем запрос всех данных из таблицы mytable, получаем Cursor
-				Cursor c = db.query("mytable", null, null, null, null, null, null);
+				Cursor c = db.query(cUser+"table", null, null, null, null, null, null);
 
 				// ставим позицию курсора на первую строку выборки
 				// если в выборке нет строк, вернется false
@@ -174,6 +230,13 @@ public class Main extends Activity {
 	public void prefs (View view)	{
 		Intent prefs = new Intent (this,Settings.class);
 		startActivity(prefs);
+	}
+
+	public  void toStat (View view){
+
+		Intent toStat = new Intent (this,Stat.class);
+		startActivity(toStat);
+
 	}
 
 }

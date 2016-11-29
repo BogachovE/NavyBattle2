@@ -97,6 +97,4 @@ public class ComputerHard extends Computer {
 		al.add(45); al.add(49); al.add(50); al.add(54); al.add(58); al.add(63); al.add(67); al.add(72); al.add(76); al.add(81); al.add(85);
 		al.add(89); al.add(90); al.add(94); al.add(98); 
 	}
-
-
 }

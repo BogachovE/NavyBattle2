@@ -1,8 +1,6 @@
 package com.example.navybattle;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -17,8 +15,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.orhanobut.hawk.Hawk;
@@ -42,6 +42,11 @@ public class ShipPlacement extends Activity {
 	public String sound;
 	private GlobalSettingsVariables settings;
 	DBHelper dbHelper;
+	String cUser;
+	ArrayList<Integer> fromBD;
+	Cursor c;
+	TextView easywin,easyloose,normalwin,normalloose,hardwin,hardloose,veryhardwin,veryhardloose;
+	LinearLayout statistc_lay;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -78,13 +83,22 @@ public class ShipPlacement extends Activity {
 		patrol_boat[3] = (ImageView)findViewById(R.id.imagePatrol4);
 		reverse = (ImageView)findViewById(R.id.imageReverse);
 		start = (ImageButton)findViewById(R.id.imageButtonStart);
-		
+		easywin = (TextView)findViewById(R.id.easywin);
+		easyloose = (TextView)findViewById(R.id.easyloose);
+		normalwin = (TextView)findViewById(R.id.normalwin);
+		normalloose = (TextView)findViewById(R.id.normalloose);
+		hardwin = (TextView)findViewById(R.id.hardwin);
+		hardloose = (TextView)findViewById(R.id.hardloose);
+		veryhardwin = (TextView)findViewById(R.id.veryhardwin);
+		veryhardloose = (TextView)findViewById(R.id.veryhardloose);
+		statistc_lay = (LinearLayout)findViewById(R.id.statistc_lay);
+
 		//create dynamic boards
 		for (int i=0; i<10; i++)	{
 			TableRow tR = new TableRow(this);
 			for (int j=0; j<10; j++)	{			
 				aBoardButtons[k] = new ImageButton(this);
-				aBoardButtons[k].setImageResource(R.drawable.cell);
+				aBoardButtons[k].setImageResource(R.drawable.celll);
 				aBoardButtons[k].setBackgroundDrawable(null);
 				aBoardButtons[k].setPadding(0,0,0,0);
 				aBoardButtons[k].setEnabled(false);
@@ -92,11 +106,13 @@ public class ShipPlacement extends Activity {
 					
 				tR.addView(aBoardButtons[k]);
 				k++;
-			}			
+
+			}
 			boardPlayer.addView(tR);
 			}
 				
 		boardCreation();
+
 	}
 	
 	
@@ -182,6 +198,7 @@ public class ShipPlacement extends Activity {
 				
 		@Override
 		public void onClick(View v) {   //при нажатии на корабыль
+
 			reverse.setVisibility(View.VISIBLE); //показать стрелку
 			shipSize = size;  //присвоить размер коробля
 			num = index;  //индекс коробля этого типа
@@ -224,7 +241,7 @@ public class ShipPlacement extends Activity {
 					aBoardButtons[location].setImageResource(R.drawable.aircarrier_0_1);
 					aBoardButtons[location+10].setImageResource(R.drawable.aircarrier_0_2);
 					aBoardButtons[location+20].setImageResource(R.drawable.aircarrier_0_3);
-					aBoardButtons[location+30].setImageResource(R.drawable.aircarrier_0_4);	
+					aBoardButtons[location+30].setImageResource(R.drawable.aircarrier_0_4);
 					ships.add(location); ships.add(location+10); ships.add(location+20); ships.add(location+30);
 					neighbors.addAll(playerBoard.aircarrier.getNeighbors());
 					lockBoard();
@@ -364,7 +381,11 @@ public class ShipPlacement extends Activity {
 		return true;
 	}
 
-	public void addResultToBD (){
+	public void addResultToBD () {
+		Hawk.init(this).build();
+
+		cUser = Hawk.get("cUser");
+
 
 		// создаем объект для данных
 		ContentValues cv = new ContentValues();
@@ -375,13 +396,16 @@ public class ShipPlacement extends Activity {
 
 		//принимаем значения из БД
 
-		Cursor c = db.query("mytable", null, null, null, null, null, null);
 
-		HashMap<Integer,Integer> mfrequency = new HashMap<>();
-		ArrayList<Integer> fromBD = new ArrayList<Integer>();
+		c = db.query(cUser + "table", null, null, null, null, null, null);
+
+
+		fromBD = new ArrayList<Integer>();
 		fromBD.clear();
 
 		if (c.moveToFirst()) {
+
+
 
 			// определяем номера столбцов по имени в выборке
 			int idColIndex = c.getColumnIndex("id");
@@ -399,8 +423,8 @@ public class ShipPlacement extends Activity {
 			do {
 				fromBD.add(c.getInt(с1ColIndex));
 				fromBD.add(c.getInt(с2ColIndex));
-				fromBD.add(c.getInt(с4ColIndex));
 				fromBD.add(c.getInt(с3ColIndex));
+				fromBD.add(c.getInt(с4ColIndex));
 				fromBD.add(c.getInt(с5ColIndex));
 				fromBD.add(c.getInt(с6ColIndex));
 				fromBD.add(c.getInt(с7ColIndex));
@@ -416,11 +440,71 @@ public class ShipPlacement extends Activity {
 
 		//меняем значения БД на новые
 
-		Hawk.init(this).build();
 
-		for(int i=0;i<ships.size();i++){
-			fromBD.set(ships.get(i),fromBD.get(ships.get(i))+1);
+
+		if(fromBD.size()!=0) {
+			for (int i = 0; i < ships.size(); i++) {
+				fromBD.set(ships.get(i), fromBD.get(ships.get(i)) + 1);
+			}
+		}else {
+			for (int i = 0; i < 10; i++) {
+				cv.put("c1", 0);
+				cv.put("c2", 0);
+				cv.put("c3", 0);
+				cv.put("c5", 0);
+				cv.put("c4", 0);
+				cv.put("c6", 0);
+				cv.put("c7", 0);
+				cv.put("c8", 0);
+				cv.put("c9", 0);
+				cv.put("c10", 0);
+				// вставляем запись и получаем ее ID
+				long rowID = db.insert(cUser+"table", null, cv);
+				Log.d("d", "row inserted, ID = " + rowID);
+
+
+			}
+
+			c = db.query(cUser + "table", null, null, null, null, null, null);
+
+			if (c.moveToFirst()) {
+
+				// определяем номера столбцов по имени в выборке
+				int idColIndex = c.getColumnIndex("id");
+				int с1ColIndex = c.getColumnIndex("c1");
+				int с2ColIndex = c.getColumnIndex("c2");
+				int с3ColIndex = c.getColumnIndex("c3");
+				int с4ColIndex = c.getColumnIndex("c4");
+				int с5ColIndex = c.getColumnIndex("c5");
+				int с6ColIndex = c.getColumnIndex("c6");
+				int с7ColIndex = c.getColumnIndex("c7");
+				int с8ColIndex = c.getColumnIndex("c8");
+				int с9ColIndex = c.getColumnIndex("c9");
+				int с10ColIndex = c.getColumnIndex("c10");
+
+				do {
+					fromBD.add(c.getInt(с1ColIndex));
+					fromBD.add(c.getInt(с2ColIndex));
+					fromBD.add(c.getInt(с3ColIndex));
+					fromBD.add(c.getInt(с4ColIndex));
+					fromBD.add(c.getInt(с5ColIndex));
+					fromBD.add(c.getInt(с6ColIndex));
+					fromBD.add(c.getInt(с7ColIndex));
+					fromBD.add(c.getInt(с8ColIndex));
+					fromBD.add(c.getInt(с9ColIndex));
+					fromBD.add(c.getInt(с10ColIndex));
+
+
+				} while (c.moveToNext());
+			} else
+				Log.d("er", "0 rows");
+
+			for (int i = 0; i < ships.size(); i++) {
+				fromBD.set(ships.get(i), fromBD.get(ships.get(i)) + 1);
+			}
 		}
+
+
 
 		Hawk.put("fromBD",fromBD);
 
@@ -431,162 +515,111 @@ public class ShipPlacement extends Activity {
 
 		//отправляем новую статистику в бд
 
-		c = db.query("mytable", null, null, null, null, null, null);
+		c = db.query(cUser+"table", null, null, null, null, null, null);
 
 		Integer l=0;
-		for(int i=1;i<=10;i++) {
+		if(fromBD.size()!=0) {
+			for (int i = 1; i <= 10; i++) {
 
 
-			switch (i){
-				case 1:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+				switch (i) {
+					case 1: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 2: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 2:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 3: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 3: {
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 4: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-					break;
-				}
-				case 4:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 5: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 5:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 6: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 6:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 7: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 7:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 8: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 8:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 9: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 9:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
+					case 10: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
 
-				    break;
-				}
-				case 10:{
-					for (int j=1;j<=10;j++) {
-						cv.put("c" + j, fromBD.get(l));
-						l=l+1;
+						break;
 					}
-					db.update("mytable", cv, "id = ?", new String[]{Integer.toString(i)});
-
-				    break;
 				}
+
+
 			}
-
-
 		}
 		c.close();
-
-
-
-
-		Integer r = 0,co = 0;
-		for(int i=0;i<ships.size();i++){
-			if (ships.get(i)<10){
-				r=1;
-				co=ships.get(i)+1;
-			}
-			if (ships.get(i)<20&ships.get(i)>=10){
-				r=2;
-				co=ships.get(i)-9;
-			}
-			if (ships.get(i)<30&ships.get(i)>=20){
-				r=3;
-				co=ships.get(i)-19;
-			}
-			if (ships.get(i)<40&ships.get(i)>=30){
-				r=4;
-				co=ships.get(i)-29;
-			}
-			if (ships.get(i)<50&ships.get(i)>=40){
-				r=5;
-				co=ships.get(i)-39;
-			}
-			if (ships.get(i)<60&ships.get(i)>=50){
-				r=6;
-				co=ships.get(i)-49;
-			}
-			if (ships.get(i)<70&ships.get(i)>=60){
-				r=7;
-				co=ships.get(i)-59;
-			}
-			if (ships.get(i)<80&ships.get(i)>=70){
-				r=8;
-				co=ships.get(i)-69;
-			}
-			if (ships.get(i)<90&ships.get(i)>=80){
-				r=9;
-				co=ships.get(i)-79;
-			}
-			if (ships.get(i)>=90){
-				r=10;
-				co=ships.get(i)-89;
-			}
-
-			mfrequency.put(r,co);
-		}
-
-
-
-
-
 	}
+
 
 }
