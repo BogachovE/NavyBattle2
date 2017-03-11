@@ -41,10 +41,7 @@ public class ShipPlacement extends Activity {
 	public MediaPlayer mpPlacement;
 	public String sound;
 	private GlobalSettingsVariables settings;
-	DBHelper dbHelper;
 	String cUser;
-	ArrayList<Integer> fromBD;
-	Cursor c;
 	TextView easywin,easyloose,normalwin,normalloose,hardwin,hardloose,veryhardwin,veryhardloose;
 	LinearLayout statistc_lay;
 
@@ -53,8 +50,7 @@ public class ShipPlacement extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ship_placement);
 
-		//Создание Обьекта для работы с БД
-		dbHelper = new DBHelper(this);
+
 
 		playerBoard = new GameBoard(100);
 		int k = 0;
@@ -368,9 +364,9 @@ public class ShipPlacement extends Activity {
 	
 	
 	public void startGame (View View)	{
-		addResultToBD();
 		Intent newGame = new Intent(this, AgainstComputer.class);
 		newGame.putExtra("Board", playerBoard);
+		Hawk.put("ships",ships);
 		startActivity(newGame);
 	}
 	
@@ -381,245 +377,7 @@ public class ShipPlacement extends Activity {
 		return true;
 	}
 
-	public void addResultToBD () {
-		Hawk.init(this).build();
 
-		cUser = Hawk.get("cUser");
-
-
-		// создаем объект для данных
-		ContentValues cv = new ContentValues();
-
-
-		// подключаемся к БД
-		SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-		//принимаем значения из БД
-
-
-		c = db.query(cUser + "table", null, null, null, null, null, null);
-
-
-		fromBD = new ArrayList<Integer>();
-		fromBD.clear();
-
-		if (c.moveToFirst()) {
-
-
-
-			// определяем номера столбцов по имени в выборке
-			int idColIndex = c.getColumnIndex("id");
-			int с1ColIndex = c.getColumnIndex("c1");
-			int с2ColIndex = c.getColumnIndex("c2");
-			int с3ColIndex = c.getColumnIndex("c3");
-			int с4ColIndex = c.getColumnIndex("c4");
-			int с5ColIndex = c.getColumnIndex("c5");
-			int с6ColIndex = c.getColumnIndex("c6");
-			int с7ColIndex = c.getColumnIndex("c7");
-			int с8ColIndex = c.getColumnIndex("c8");
-			int с9ColIndex = c.getColumnIndex("c9");
-			int с10ColIndex = c.getColumnIndex("c10");
-
-			do {
-				fromBD.add(c.getInt(с1ColIndex));
-				fromBD.add(c.getInt(с2ColIndex));
-				fromBD.add(c.getInt(с3ColIndex));
-				fromBD.add(c.getInt(с4ColIndex));
-				fromBD.add(c.getInt(с5ColIndex));
-				fromBD.add(c.getInt(с6ColIndex));
-				fromBD.add(c.getInt(с7ColIndex));
-				fromBD.add(c.getInt(с8ColIndex));
-				fromBD.add(c.getInt(с9ColIndex));
-				fromBD.add(c.getInt(с10ColIndex));
-
-
-			} while (c.moveToNext());
-		} else
-			Log.d("er", "0 rows");
-
-
-		//меняем значения БД на новые
-
-
-
-		if(fromBD.size()!=0) {
-			for (int i = 0; i < ships.size(); i++) {
-				fromBD.set(ships.get(i), fromBD.get(ships.get(i)) + 1);
-			}
-		}else {
-			for (int i = 0; i < 10; i++) {
-				cv.put("c1", 0);
-				cv.put("c2", 0);
-				cv.put("c3", 0);
-				cv.put("c5", 0);
-				cv.put("c4", 0);
-				cv.put("c6", 0);
-				cv.put("c7", 0);
-				cv.put("c8", 0);
-				cv.put("c9", 0);
-				cv.put("c10", 0);
-				// вставляем запись и получаем ее ID
-				long rowID = db.insert(cUser+"table", null, cv);
-				Log.d("d", "row inserted, ID = " + rowID);
-
-
-			}
-
-			c = db.query(cUser + "table", null, null, null, null, null, null);
-
-			if (c.moveToFirst()) {
-
-				// определяем номера столбцов по имени в выборке
-				int idColIndex = c.getColumnIndex("id");
-				int с1ColIndex = c.getColumnIndex("c1");
-				int с2ColIndex = c.getColumnIndex("c2");
-				int с3ColIndex = c.getColumnIndex("c3");
-				int с4ColIndex = c.getColumnIndex("c4");
-				int с5ColIndex = c.getColumnIndex("c5");
-				int с6ColIndex = c.getColumnIndex("c6");
-				int с7ColIndex = c.getColumnIndex("c7");
-				int с8ColIndex = c.getColumnIndex("c8");
-				int с9ColIndex = c.getColumnIndex("c9");
-				int с10ColIndex = c.getColumnIndex("c10");
-
-				do {
-					fromBD.add(c.getInt(с1ColIndex));
-					fromBD.add(c.getInt(с2ColIndex));
-					fromBD.add(c.getInt(с3ColIndex));
-					fromBD.add(c.getInt(с4ColIndex));
-					fromBD.add(c.getInt(с5ColIndex));
-					fromBD.add(c.getInt(с6ColIndex));
-					fromBD.add(c.getInt(с7ColIndex));
-					fromBD.add(c.getInt(с8ColIndex));
-					fromBD.add(c.getInt(с9ColIndex));
-					fromBD.add(c.getInt(с10ColIndex));
-
-
-				} while (c.moveToNext());
-			} else
-				Log.d("er", "0 rows");
-
-			for (int i = 0; i < ships.size(); i++) {
-				fromBD.set(ships.get(i), fromBD.get(ships.get(i)) + 1);
-			}
-		}
-
-
-
-		Hawk.put("fromBD",fromBD);
-
-
-
-
-
-
-		//отправляем новую статистику в бд
-
-		c = db.query(cUser+"table", null, null, null, null, null, null);
-
-		Integer l=0;
-		if(fromBD.size()!=0) {
-			for (int i = 1; i <= 10; i++) {
-
-
-				switch (i) {
-					case 1: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 2: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 3: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 4: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 5: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 6: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 7: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 8: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 9: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-					case 10: {
-						for (int j = 1; j <= 10; j++) {
-							cv.put("c" + j, fromBD.get(l));
-							l = l + 1;
-						}
-						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
-
-						break;
-					}
-				}
-
-
-			}
-		}
-		c.close();
-	}
 
 
 }

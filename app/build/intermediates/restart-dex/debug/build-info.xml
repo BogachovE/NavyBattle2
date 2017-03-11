@@ -5,40 +5,50 @@
     density="xxhdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="108046026300200"
+    timestamp="427019364094060"
     token="1248120109895756941"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="4368" />
+        duration="2977" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="2677" />
     <task
         name="instant-run-transform"
-        duration="260" />
+        duration="119" />
     <task
         name="verifier"
-        duration="15" />
+        duration="62" />
 
     <artifact
-        location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-        type="DEX" />
+        location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
     <build
-        timestamp="106807363714891"
+        timestamp="424055574814070"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="108046026300200"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="426295383164583"
+        verifier="COMPATIBLE" >
         <artifact
-            location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-            type="DEX" />
+            location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/builds/debug/426295383164583/classes.dex"
+            type="RELOAD_DEX" />
+    </build>
+    <build
+        timestamp="427019364094060"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

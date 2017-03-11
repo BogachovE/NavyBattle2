@@ -44,7 +44,8 @@
             android:name=".ShipPlacement"
             android:label="@string/title_activity_ship_placement"
             android:screenOrientation="landscape" />
-        <activity android:name=".Stat"></activity>
+        <activity android:name=".Stat" />
+        <activity android:name=".StatActivity"></activity>
     </application>
 
 </manifest>

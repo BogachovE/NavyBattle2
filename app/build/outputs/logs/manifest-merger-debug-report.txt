@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:2:1-50:12
+ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:2:1-51:12
 	package
 		ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:3:5-37
 		INJECTED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml
@@ -50,7 +50,7 @@ ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManife
 	android:name
 		ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:14:22-77
 application
-ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:16:5-48:19
+ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:16:5-49:19
 MERGED from [com.android.support:appcompat-v7:23.4.0] /Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] /Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-vector-drawable:23.4.0] /Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/AndroidManifest.xml:7:5-20
@@ -114,6 +114,10 @@ ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManife
 	android:name
 		ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:44:13-42
 activity#com.example.navybattle.Stat
-ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:47:9-51
+ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:47:9-42
 	android:name
 		ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:47:19-39
+activity#com.example.navybattle.StatActivity
+ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:48:9-59
+	android:name
+		ADDED from /Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/AndroidManifest.xml:48:19-47

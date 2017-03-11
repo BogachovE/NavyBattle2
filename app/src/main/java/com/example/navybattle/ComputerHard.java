@@ -55,7 +55,7 @@ public class ComputerHard extends Computer {
 			ans = get23Move(rand);
 		}
 		
-		else if (others < 5)	ans = get23Move(rand);			//one of the cruisers or corvettes is alive
+		else if (others < 6 && vessel.size()==0)	ans = get23Move(rand);			//one of the cruisers or corvettes is alive
 		
 		else	{												//only patrol boats left
 			ind = rand.nextInt(100);

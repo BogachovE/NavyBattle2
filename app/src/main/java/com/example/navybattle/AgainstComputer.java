@@ -1,8 +1,3 @@
-
-
-
-
-
 package com.example.navybattle;
 
 import java.util.ArrayList;
@@ -20,6 +15,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.os.Vibrator;
 import android.util.Log;
 import android.view.Menu;
@@ -50,10 +46,13 @@ public class AgainstComputer extends Activity {
 	private String difficulty, vibration, sound;
 	private Vibrator v;
 	private MediaPlayer mpHit, mpSunk, mpMiss, mpUserWin, mpCompWin;
+	private String cUser;
+	private  DBHelper dbHelper;
 	private ArrayList<Integer> fromBD;
-	
+	private Cursor c;
 
-	String player1;
+
+
 	
 	
 	private boolean aGameOver = false;
@@ -73,7 +72,12 @@ public class AgainstComputer extends Activity {
 
 		Hawk.init(this).build();
 		fromBD=Hawk.get("fromBD");
+		cUser = Hawk.get("cUser");
+
 		int gameCount = Hawk.get("gameCount");
+		Log.d("COUNT", String.valueOf(gameCount));
+
+
 
 		
 		//create dynamic boards
@@ -255,6 +259,7 @@ public class AgainstComputer extends Activity {
 						if (sound == "On")	mpCompWin.start();
 						aMsgArea.setText("Game over!!! Computer WON!");
 						finRating("cpu",settings.getDifficulty());
+						addResultToBD();
 						aGameOver=true;
 					}
 					playerBoardButtons[move].setImageResource(R.drawable.cell_hit);
@@ -317,6 +322,7 @@ public class AgainstComputer extends Activity {
 							if (winnerCpu == 1)	{
 								aMsgArea.setText("Game over!! Computer WON!");
 								finRating("cpu",settings.getDifficulty());
+								addResultToBD();
 								if (sound == "On")	mpCompWin.start();
 								playerBoardButtons[move].setImageResource(R.drawable.cell_hit);
 								aGameOver=true;
@@ -369,6 +375,7 @@ public class AgainstComputer extends Activity {
 					if (winnerCpu == 1)	{
 						aMsgArea.setText("Game over!! Computer WON!");
 						finRating("cpu",settings.getDifficulty());
+						addResultToBD();
 						if (sound == "On")	mpCompWin.start();
 						playerBoardButtons[move].setImageResource(R.drawable.cell_hit);
 						aGameOver=true;
@@ -456,12 +463,18 @@ public class AgainstComputer extends Activity {
 					if (winnerPlayer == 1)	{
 						aMsgArea.setText("Game over!!! You WON!");
 						finRating("user",settings.getDifficulty());
+						addResultToBD();
 						if (sound == "On")	mpUserWin.start();
 						aGameOver=true;
 					}
 				}
 			}
 		}
+	}
+	public void toStat (View View)	{
+		Intent goToStat = new Intent(this, StatActivity.class);
+		goToStat.putExtra("fromBD", fromBD);
+		startActivity(goToStat);
 	}
 
 
@@ -567,8 +580,249 @@ public class AgainstComputer extends Activity {
 
 	}
 
+	public void addResultToBD () {
+
+
+		ArrayList<Integer> ships = new ArrayList<Integer>();
+		ships=Hawk.get("ships");
+
+		//Создание Обьекта для работы с БД
+		dbHelper = new DBHelper(this);
+		// создаем объект для данных
+		ContentValues cv = new ContentValues();
+
+
+		// подключаемся к БД
+		SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+		//принимаем значения из БД
+
+
+		c = db.query(cUser + "table", null, null, null, null, null, null);
+
+
+		fromBD = new ArrayList<Integer>();
+		fromBD.clear();
+
+		if (c.moveToFirst()) {
+
+
+
+			// определяем номера столбцов по имени в выборке
+			int idColIndex = c.getColumnIndex("id");
+			int с1ColIndex = c.getColumnIndex("c1");
+			int с2ColIndex = c.getColumnIndex("c2");
+			int с3ColIndex = c.getColumnIndex("c3");
+			int с4ColIndex = c.getColumnIndex("c4");
+			int с5ColIndex = c.getColumnIndex("c5");
+			int с6ColIndex = c.getColumnIndex("c6");
+			int с7ColIndex = c.getColumnIndex("c7");
+			int с8ColIndex = c.getColumnIndex("c8");
+			int с9ColIndex = c.getColumnIndex("c9");
+			int с10ColIndex = c.getColumnIndex("c10");
+
+			do {
+				fromBD.add(c.getInt(с1ColIndex));
+				fromBD.add(c.getInt(с2ColIndex));
+				fromBD.add(c.getInt(с3ColIndex));
+				fromBD.add(c.getInt(с4ColIndex));
+				fromBD.add(c.getInt(с5ColIndex));
+				fromBD.add(c.getInt(с6ColIndex));
+				fromBD.add(c.getInt(с7ColIndex));
+				fromBD.add(c.getInt(с8ColIndex));
+				fromBD.add(c.getInt(с9ColIndex));
+				fromBD.add(c.getInt(с10ColIndex));
+
+
+			} while (c.moveToNext());
+		} else
+			Log.d("er", "0 rows");
+
+
+		//меняем значения БД на новые
+
+
+
+		if(fromBD.size()!=0) {
+			for (int i = 0; i < ships.size(); i++) {
+				fromBD.set(ships.get(i), fromBD.get(ships.get(i)) + 1);
+			}
+		}else {
+			for (int i = 0; i < 10; i++) {
+				cv.put("c1", 0);
+				cv.put("c2", 0);
+				cv.put("c3", 0);
+				cv.put("c5", 0);
+				cv.put("c4", 0);
+				cv.put("c6", 0);
+				cv.put("c7", 0);
+				cv.put("c8", 0);
+				cv.put("c9", 0);
+				cv.put("c10", 0);
+				// вставляем запись и получаем ее ID
+				long rowID = db.insert(cUser+"table", null, cv);
+				Log.d("d", "row inserted, ID = " + rowID);
+
+
+			}
+
+			c = db.query(cUser + "table", null, null, null, null, null, null);
+
+			if (c.moveToFirst()) {
+
+				// определяем номера столбцов по имени в выборке
+				int idColIndex = c.getColumnIndex("id");
+				int с1ColIndex = c.getColumnIndex("c1");
+				int с2ColIndex = c.getColumnIndex("c2");
+				int с3ColIndex = c.getColumnIndex("c3");
+				int с4ColIndex = c.getColumnIndex("c4");
+				int с5ColIndex = c.getColumnIndex("c5");
+				int с6ColIndex = c.getColumnIndex("c6");
+				int с7ColIndex = c.getColumnIndex("c7");
+				int с8ColIndex = c.getColumnIndex("c8");
+				int с9ColIndex = c.getColumnIndex("c9");
+				int с10ColIndex = c.getColumnIndex("c10");
+
+				do {
+					fromBD.add(c.getInt(с1ColIndex));
+					fromBD.add(c.getInt(с2ColIndex));
+					fromBD.add(c.getInt(с3ColIndex));
+					fromBD.add(c.getInt(с4ColIndex));
+					fromBD.add(c.getInt(с5ColIndex));
+					fromBD.add(c.getInt(с6ColIndex));
+					fromBD.add(c.getInt(с7ColIndex));
+					fromBD.add(c.getInt(с8ColIndex));
+					fromBD.add(c.getInt(с9ColIndex));
+					fromBD.add(c.getInt(с10ColIndex));
+
+
+				} while (c.moveToNext());
+			} else
+				Log.d("er", "0 rows");
+
+			for (int i = 0; i < ships.size(); i++) {
+				fromBD.set(ships.get(i), fromBD.get(ships.get(i)) + 1);
+			}
+		}
+
+
+
+		Hawk.put("fromBD",fromBD);
+
+
+
+
+
+
+		//отправляем новую статистику в бд
+
+		c = db.query(cUser+"table", null, null, null, null, null, null);
+
+		Integer l=0;
+		if(fromBD.size()!=0) {
+			for (int i = 1; i <= 10; i++) {
+
+
+				switch (i) {
+					case 1: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 2: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 3: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 4: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 5: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 6: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 7: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 8: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 9: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+					case 10: {
+						for (int j = 1; j <= 10; j++) {
+							cv.put("c" + j, fromBD.get(l));
+							l = l + 1;
+						}
+						db.update(cUser + "table", cv, "id = ?", new String[]{Integer.toString(i)});
+
+						break;
+					}
+				}
+
+
+			}
+		}
+		c.close();
+	}
 	public void finRating(String hoo,String level){
-		String cUser = Hawk.get("cUser");
+
 		Integer winEasy=0,winNormal=0,winHard=0,winVeryHard=0,looseEasy=0,looseNormal=0,looseHard=0,looseVeryHard=0;
 		DBHelper dbHelper;
 
@@ -637,7 +891,7 @@ public class AgainstComputer extends Activity {
 				winNormal=winNormal+1;
 				cv.put("winNormal",winNormal);
 				db.update(cUser + "Rating", cv, "id = ?", new String[]{"1"});
-			    }
+			}
 		}
 		else  if(level.equals("Hard")){
 			if(hoo.equals("cpu")){
@@ -671,5 +925,8 @@ public class AgainstComputer extends Activity {
 
 
 	}
+
+
+
 }
 

@@ -12,6 +12,10 @@
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/layout/abc_select_dialog_material.xml"
     },
     {
+        "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/layout/activity_stat2.xml",
+        "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/src/main/res/layout/activity_stat2.xml"
+    },
+    {
         "merged": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
         "source": "/Users/Bogachov/AndroidProjects/NavyBattle/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/layout/select_dialog_multichoice_material.xml"
     },

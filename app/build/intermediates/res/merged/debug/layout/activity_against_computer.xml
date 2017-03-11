@@ -79,4 +79,17 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/Ivory" />
 
-        </RelativeLayout>
+    <Button
+        android:text="FromBD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/boardComputer"
+        android:layout_toRightOf="@+id/playerTurn"
+        android:layout_toEndOf="@+id/playerTurn"
+        android:layout_marginLeft="219dp"
+        android:layout_marginStart="219dp"
+        android:layout_marginTop="21dp"
+        android:id="@+id/stat_btn"
+        android:onClick="toStat" />
+
+</RelativeLayout>
